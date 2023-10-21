@@ -35,4 +35,13 @@ public class Triangle {
         double side3 = calculateDistance(p3, p1);
         return side1 + side2 + side3;
     }
+
+    public static double calculateTriangleArea() {
+        double a = calculateDistance(p1, p2);
+        double b = calculateDistance(p2, p3);
+        double c = calculateDistance(p3, p1);
+        double s = (a + b + c) / 2; // Calculate the semi-perimeter
+        double area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+        return area;
+    }
 }

@@ -31,6 +31,10 @@ public class Main {
             System.out.println("Triangle " + (i + 1) + ":");
             System.out.println("Perimeter: " + triangles[i].calculatePerimeter());
             System.out.println("Type: " + triangles[i].getType() + "\n");
+            System.out.println("The area of triangle is : " + triangles[i].calculateTriangleArea());
+
         }
+
+
     }
 }
