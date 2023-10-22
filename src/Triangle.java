@@ -44,4 +44,15 @@ public class Triangle {
         double area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
         return area;
     }
+
+    public boolean isPointInside(double px, double py) {
+        // Calculate the areas of the main triangle and three sub-triangles
+
+        double sub1Area = Math.abs((px * (p1.y - p2.y) + p1.x * (p2.y - py) + p2.x * (py - p1.y)) / 2.0);
+        double sub2Area = Math.abs((px * (p2.y - p3.y) + p2.x * (p3.y - py) + p3.x * (py - p2.y)) / 2.0);
+        double sub3Area = Math.abs((px * (p3.y - p1.y) + p3.x * (p1.y - py) + p1.x * (py - p3.y)) / 2.0);
+
+        // If the sum of sub-triangle areas equals the main triangle area, the point is inside the triangle
+        return sub1Area + sub2Area + sub3Area;
+    }
 }

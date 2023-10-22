@@ -24,14 +24,23 @@ public class Main {
             double y3 = s.nextDouble();
 
             triangles[i] = new Triangle(new Point(x1, y1), new Point(x2, y2), new Point(x3, y3));
+
+
         }
 
+        System.out.println("Enter Coordinates to check wheather it is in triangle or not :  ");
+        double c_x = s.nextDouble();
+        double c_y = s.nextDouble();
         System.out.println("\nTriangle Information:");
         for (int i = 0; i < numTriangles; i++) {
             System.out.println("Triangle " + (i + 1) + ":");
             System.out.println("Perimeter: " + triangles[i].calculatePerimeter());
             System.out.println("Type: " + triangles[i].getType() + "\n");
             System.out.println("The area of triangle is : " + triangles[i].calculateTriangleArea());
+            if(triangles[i].calculateTriangleArea() == triangles[i].isPointInside)
+            {
+                System.out.println("point is inside triangle.");
+            }
 
         }
 
